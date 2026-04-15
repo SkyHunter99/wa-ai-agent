@@ -69,8 +69,10 @@ function addLog(type, message, extra = {}) {
 }
 
 // ─── HELPERS ─────────────────────────────────────────────────
+const WORK_H_START = 23;
+const WORK_H_END   = 23;
+
 function isWorkingHours() {
-  // Gunakan timezone WIB (UTC+7)
   const now  = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Jakarta" }));
   const hour = now.getHours();
   return hour >= WORK_H_START && hour < WORK_H_END;
